@@ -29,3 +29,68 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+@section Bottom
+{
+    <a href="/Home/GetCategories" onclick="FetchCategoriesHtml(); return false;">Hämta kategorier</a>
+    <ul id="cats">
+        <li>
+            Här ska kategorierna ligga
+        </li>
+    </ul>
+
+    <input value="Hämta objekt" type="button" onclick="FetchObject()" />
+    <input type="text" id="catname" name="catname" />
+
+
+    <input value="Hämta lista" type="button" onclick="FetchObjectList()" />
+    <textarea id="txt"  name="txt" rows="10" cols="30"></textarea>
+
+
+    <script type="text/javascript">
+        function FetchCategoriesHtml() {
+            $("#cats").load('@Url.Action("GetCategories", "Home")');
+        }
+
+
+
+    function FetchObject() {
+        $.ajax({
+            dataType: "json",
+            url: '@Url.Action("GetFirstCategory", "Home")',
+            data: "", //Kan vara parameter etc
+            success: function (data) {
+                console.log(data);
+                alert('Objektet som kom tillbaka har ' + data.Id);
+                //$("#catname").val(data.Name);
+            }
+        });
+    }
+
+
+    function FetchObjectList() {
+        $.ajax({
+            dataType: "json",
+            url: '@Url.Action("GetCategoriesJson", "Home")',
+            data: "", //Kan vara parameter etc
+            success: function (data) {
+                console.log(data);
+                var items = [];
+                $.each(data.Categories, function (idx, cat) {
+                    console.log(cat);
+                    items.push(cat.Id + ' ' + cat.Name);
+                });
+
+
+                $('#txt').val(items.join('\n'));
+            }
+        });
+    }
+
+
+
+    </script>
+
+
+}
+

@@ -1,0 +1,15 @@
+﻿@model NiceUI.ViewModels.CategoryListViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<ul>
+
+    @foreach (var cat in Model.Categories)
+    {
+        <li>@cat.Name</li>
+    }
+</ul>

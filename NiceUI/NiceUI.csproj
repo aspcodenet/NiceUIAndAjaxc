@@ -131,18 +131,69 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CategoryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="dist\css\site.min.css" />
+    <Content Include="dist\fonts\angularicons.svg" />
+    <Content Include="dist\fonts\fontawesome-webfont.svg" />
+    <Content Include="dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="dist\img\ascii-logo.gif" />
+    <Content Include="dist\img\bootflat-ui-kit.jpg" />
+    <Content Include="dist\img\check_flat\default.png" />
+    <Content Include="dist\img\design.png" />
+    <Content Include="dist\img\divider.png" />
+    <Content Include="dist\img\fast.png" />
+    <Content Include="dist\img\feature-bootstrap.png" />
+    <Content Include="dist\img\feature-css.png" />
+    <Content Include="dist\img\feature-lightweight.png" />
+    <Content Include="dist\img\feature-mobile.png" />
+    <Content Include="dist\img\footer-logo.png" />
+    <Content Include="dist\img\github.png" />
+    <Content Include="dist\img\index.png" />
+    <Content Include="dist\img\Jumbotron.jpg" />
+    <Content Include="dist\img\logo-index.png" />
+    <Content Include="dist\img\logo.png" />
+    <Content Include="dist\img\photo-1.jpg" />
+    <Content Include="dist\img\photo-2.jpg" />
+    <Content Include="dist\img\photo-3.jpg" />
+    <Content Include="dist\img\photo-4.jpg" />
+    <Content Include="dist\img\prototyping.png" />
+    <Content Include="dist\img\screensho1.png" />
+    <Content Include="dist\img\screenshot2.png" />
+    <Content Include="dist\img\share.gif" />
+    <Content Include="dist\img\slider1.jpg" />
+    <Content Include="dist\img\slider2.jpg" />
+    <Content Include="dist\img\slider3.jpg" />
+    <Content Include="dist\img\thumbnail-1.jpg" />
+    <Content Include="dist\img\thumbnail-2.jpg" />
+    <Content Include="dist\img\thumbnail-3.jpg" />
+    <Content Include="dist\img\thumbnail-4.jpg" />
+    <Content Include="dist\img\together.png" />
+    <Content Include="dist\img\wild_flowers.png" />
+    <Content Include="dist\js\site.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="dist\fonts\angularicons.eot" />
+    <Content Include="dist\fonts\angularicons.ttf" />
+    <Content Include="dist\fonts\angularicons.woff" />
+    <Content Include="dist\fonts\fontawesome-webfont.eot" />
+    <Content Include="dist\fonts\fontawesome-webfont.ttf" />
+    <Content Include="dist\fonts\fontawesome-webfont.woff" />
+    <Content Include="dist\fonts\FontAwesome.otf" />
+    <Content Include="dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="dist\img\check_flat\default.psd" />
+    <Content Include="dist\js\site.min.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -168,6 +219,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout - Copy.cshtml" />
+    <Content Include="Views\Home\GetCategories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

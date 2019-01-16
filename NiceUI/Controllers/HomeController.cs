@@ -20,6 +20,49 @@ namespace NiceUI.Controllers
             return View();
         }
 
+        public ActionResult GetCategories()
+        {
+            var model = new ViewModels.CategoryListViewModel();
+            model.Categories.AddRange(new[]{
+                new ViewModels.CategoryViewModel{ Id=1,Name="sdfadassda"},
+                new ViewModels.CategoryViewModel{ Id=2,Name="sfasdf"},
+                new ViewModels.CategoryViewModel{ Id=3,Name="ewqqwe"}
+            });
+            return View(model);
+        }
+
+        public ActionResult GetPartialCategories()
+        {
+            var model = new ViewModels.CategoryListViewModel();
+            model.Categories.AddRange(new[]{
+                new ViewModels.CategoryViewModel{ Id=1,Name="ajax sdfadassda"},
+                new ViewModels.CategoryViewModel{ Id=2,Name="ajax sfasdf"},
+                new ViewModels.CategoryViewModel{ Id=3,Name="ajax ewqqwe"}
+            });
+            return PartialView("GetCategories", model);
+        }
+
+        public JsonResult GetFirstCategory()
+        {
+            var model = new ViewModels.CategoryViewModel { Id = 1, Name = "ajax sdfadassda" };
+            return Json(model,JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetCategoriesJson()
+        {
+            var model = new ViewModels.CategoryListViewModel();
+            model.Categories.AddRange(new[]{
+                new ViewModels.CategoryViewModel{ Id=1,Name="ajax sdfadassda"},
+                new ViewModels.CategoryViewModel{ Id=2,Name="ajax sfasdf"},
+                new ViewModels.CategoryViewModel{ Id=3,Name="ajax ewqqwe"}
+            });
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+        
+
+
+
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
