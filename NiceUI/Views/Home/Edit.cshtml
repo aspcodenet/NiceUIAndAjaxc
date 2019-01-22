@@ -1,0 +1,70 @@
+﻿@model NiceUI.ViewModels.TestEditViewModel
+
+
+@{
+    ViewBag.Title = "About";
+}
+
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post, new { role = "form", @class = "form-horizontal" }))
+{
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Ditt namn</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(model=>model.Name,
+                new {  @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Födelesår</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(model=>model.Year,
+                new {  @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Year)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Grupp</label>
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.SelectedGroup, Model.Groups, new { @class="form-control" } )
+        </div>
+    </div>
+    <div class="form-group" id="styrketraningEntryRow">
+        <label class="col-md-2 control-label" for="description">Strength training goals</label>
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.WriteGoalsForStrengthTraining, new { @class = "form-control" ,placeholder = "Description" ,rows = "10" ,cols = "30" });
+            @*<textarea required="" class="form-control" placeholder="Description" rows="10" cols="30" id="description" name="description"></textarea>*@
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-info" type="submit">Submit</button>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#SelectedGroup").change(function () {
+            ChangeGroup();
+        });
+        ChangeGroup();
+
+
+    });
+
+
+    function ChangeGroup() {
+        if ($("#SelectedGroup").val() == 'styrketraning')
+            $('#styrketraningEntryRow').show();
+        else
+            $('#styrketraningEntryRow').hide();
+
+    }
+
+</script>

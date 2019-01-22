@@ -13,12 +13,60 @@ namespace NiceUI.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Edit()
+        {
+            var model = new ViewModels.TestEditViewModel();
+            model.AvailableLopGruppGoals = SetupGoals();
+            model.Groups = SetupGroups();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(ViewModels.TestEditViewModel model)
+        {
+            if(!ModelState.IsValid)
+            {
+
+            }
+            return View(model);
+        }
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
+
+
+        protected List<SelectListItem> SetupGroups()
+        {
+            return new List<SelectListItem>
+            {
+                new SelectListItem{ Text = "Löpning", Value="lopning" },
+                new SelectListItem{ Text = "Styrketräning", Value="styrketraning" },
+                new SelectListItem{ Text = "Teknik", Value="teknik" }
+            };
+        }
+
+        protected List<SelectListItem> SetupGoals()
+        {
+            return new List<SelectListItem>
+            {
+                new SelectListItem{ Text = "Nybörjare", Value="nybörjare" },
+                new SelectListItem{ Text = "Bra träning", Value="goodtraining" },
+                new SelectListItem{ Text = "Teknik", Value="teknik" },
+                new SelectListItem{ Text = "Springa ett lopp", Value="springalopp" },
+                new SelectListItem{ Text = "Springa 5km", Value="springa5k" },
+                new SelectListItem{ Text = "Springa 10km", Value="springa10k" },
+                new SelectListItem{ Text = "Springa halvmaraton", Value="springahalvmaraton" },
+                new SelectListItem{ Text = "Springa maraton", Value="springahalvmaraton" },
+            };
+        }
+
+
 
         public ActionResult GetCategories()
         {
