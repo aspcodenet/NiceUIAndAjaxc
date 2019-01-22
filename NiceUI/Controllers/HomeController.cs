@@ -17,7 +17,7 @@ namespace NiceUI.Controllers
         public ActionResult Edit()
         {
             var model = new ViewModels.TestEditViewModel();
-            model.AvailableLopGruppGoals = SetupGoals();
+            model.AvailableGoals = SetupGoals();
             model.Groups = SetupGroups();
             return View(model);
         }

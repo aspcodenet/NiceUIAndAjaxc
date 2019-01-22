@@ -11,7 +11,7 @@ namespace NiceUI.ViewModels
     {
         public TestEditViewModel()
         {
-            LopGruppGoals = new List<string>();
+            GoalsWithMyTraining = new List<string>();
         }
         public int Id { get; set; }
         [Required]
@@ -24,9 +24,12 @@ namespace NiceUI.ViewModels
         public List<SelectListItem> Groups { get; set; }
         public string SelectedGroup { get; set; }
 
-        public List<SelectListItem> AvailableLopGruppGoals { get; set; }
-        public List<string> LopGruppGoals { get; set; }
 
         public string WriteGoalsForStrengthTraining { get; set; }
+
+
+        public List<SelectListItem> AvailableGoals { get; set; }
+        public List<string> GoalsWithMyTraining { get; set; }
+
     }
 }

@@ -31,16 +31,35 @@
     <div class="form-group">
         <label class="col-md-2 control-label">Grupp</label>
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.SelectedGroup, Model.Groups, new { @class="form-control" } )
+            @Html.DropDownListFor(m => m.SelectedGroup, Model.Groups, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group" id="styrketraningEntryRow">
         <label class="col-md-2 control-label" for="description">Strength training goals</label>
         <div class="col-md-10">
-            @Html.TextAreaFor(m => m.WriteGoalsForStrengthTraining, new { @class = "form-control" ,placeholder = "Description" ,rows = "10" ,cols = "30" });
+            @Html.TextAreaFor(m => m.WriteGoalsForStrengthTraining, new { @class = "form-control", placeholder = "Description", rows = "10", cols = "30" });
             @*<textarea required="" class="form-control" placeholder="Description" rows="10" cols="30" id="description" name="description"></textarea>*@
         </div>
     </div>
+
+
+
+    <div class="form-group">
+            <label class="col-md-2 control-label">Mål - multiple select</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.GoalsWithMyTraining, Model.AvailableGoals, new { @class = "form-control select2", multiple="multiple" })
+            </div>
+        </div>
+
+    @*<select class="form-control select2" data-placeholder="Välj ett eller flera mål i listan" id="GoalsWithMyTraining" 
+            multiple name="GoalsWithMyTraining">
+        @foreach (var option in Model.AvailableGoals)
+        {
+            <option value="@option.Value" @(option.Selected ? "selected" : "")>@option.Text</option>
+        }
+    </select>*@
+
+
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <button class="btn btn-info" type="submit">Submit</button>
@@ -50,6 +69,9 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+
+        $(".select2").select2();
+
         $("#SelectedGroup").change(function () {
             ChangeGroup();
         });
