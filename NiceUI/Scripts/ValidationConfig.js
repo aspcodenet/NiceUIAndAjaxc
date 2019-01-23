@@ -1,11 +1,8 @@
 ﻿
 
-$(function () {
-
+$(document).ready(function () {
     $('form').each(function (index, item) {
-
-
-
+        if (!$.data(item, 'validator')) return;
         var settngs = $.data(item, 'validator').settings;
         var oldErrorFunction = settngs.errorPlacement;
         settngs.onkeyup = true;
@@ -32,5 +29,7 @@ $(function () {
         };
 
     });
-
 });
+
+
+    
